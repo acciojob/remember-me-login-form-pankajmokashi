@@ -1,12 +1,10 @@
 //your JS code here. If required.
 const form = document.querySelector("form")
 const formElements = Array.from(form.elements);
-formElements.forEach(element => {
-	console.log(element);
-});
-let result;
 
-form.addEventListener("submit", function (event) => {
+let result = []
+
+form.addEventListener("submit", (event) => {
 	event.preventDefault()
 	
 	let name = formElements[0]
@@ -14,10 +12,14 @@ form.addEventListener("submit", function (event) => {
 	let check = formElements[2]
 
 	if(check.checked === true){
-		result = {
+		let obj = {
 			name: "${name.value}",
 			password: "${password.value}"
 		}
-		localStorage.setItem("data", result)
+		result.push(obj) 
+		localStorage.setItem("data", JSON.stringify(result))
+	}
+	else{
+		result.delete[name.value]
 	}
 })

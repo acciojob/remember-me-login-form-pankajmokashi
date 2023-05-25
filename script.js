@@ -4,7 +4,7 @@ const formElements = Array.from(form.elements);
 
 let username = document.getElementById("username")
 let password = document.getElementById("password")
-let existing = document.getElementById("password")
+let existing = document.getElementById("existing")
 if(localStorage.getItem("username")){
 	existing.style.display = "inline"
 }

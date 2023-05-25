@@ -4,7 +4,10 @@ const formElements = Array.from(form.elements);
 
 let username = document.getElementById("username")
 let password = document.getElementById("password")
-
+let existing = document.getElementById("password")
+if(localStorage.getItem("username")){
+	existing.style.display = "inline"
+}
 form.addEventListener("submit", (event) => {
 	event.preventDefault()
 	

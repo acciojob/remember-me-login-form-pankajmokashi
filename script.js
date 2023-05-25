@@ -13,13 +13,15 @@ form.addEventListener("submit", (event) => {
 
 	if(check.checked === true){
 		let obj = {
-			name: "${name.value}",
-			password: "${password.value}"
+			name: name.value,
+			password: password.value
 		}
 		result.push(obj) 
+        console.log(result)
 		localStorage.setItem("data", JSON.stringify(result))
 	}
 	else{
-		result.delete[name.value]
+		result = []
+        localStorage.removeItem("data")
 	}
 })

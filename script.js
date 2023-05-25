@@ -8,7 +8,7 @@ let password = document.getElementById("password")
 form.addEventListener("submit", (event) => {
 	event.preventDefault()
 	
-	let name = formElements[0]
+	let username = formElements[0]
 	let password = formElements[1]
 	let check = formElements[2]
 
@@ -20,4 +20,5 @@ form.addEventListener("submit", (event) => {
         localStorage.removeItem("username")
 		localStorage.removeItem("password")
 	}
+	alert("Logged in as " + username.value)
 })

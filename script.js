@@ -2,7 +2,8 @@
 const form = document.querySelector("form")
 const formElements = Array.from(form.elements);
 
-let result = []
+let username = document.getElementById("username")
+let password = document.getElementById("password")
 
 form.addEventListener("submit", (event) => {
 	event.preventDefault()
@@ -12,16 +13,11 @@ form.addEventListener("submit", (event) => {
 	let check = formElements[2]
 
 	if(check.checked === true){
-		let obj = {
-			name: name.value,
-			password: password.value
-		}
-		result.push(obj) 
-        console.log(result)
-		localStorage.setItem("data", JSON.stringify(result))
+		localStorage.setItem("username", username.value)
+		localStorage.setItem("password", password.value)
 	}
 	else{
-		result = []
-        localStorage.removeItem("data")
+        localStorage.removeItem("username")
+		localStorage.removeItem("password")
 	}
 })
